@@ -164,7 +164,7 @@ Popzy.prototype.open = function() {
     if(this.opt.enableScrollLock){
         const target = this.opt.scrollLockTarget();
 
-        if(this._hasScrollBar(target)){
+        if(Popzy.elements.length === 1 && this._hasScrollBar(target)){
             target.classList.add("popzy--no-scroll");
             const targetPadRight = parseInt(getComputedStyle(target).paddingRight);
             target.style.paddingRight = targetPadRight + this._getScrollbarWidth() + "px";
